@@ -2,11 +2,11 @@
   <div class="newsinfo-container">
     <h3 class="title">{{info.title}}</h3>
     <p class="subtitle">
-      <span>发表时间：{{info.add_time | dateformat}}</span>
+      <span>发表时间：{{info.add_time | dateFormat}}</span>
       <span>点击：{{info.click}}次</span>
     </p>
     <div class="content" v-html="info.content"></div>
-    <comment-box></comment-box>
+    <comment-box :id='id'></comment-box>
   </div>
 </template>
 <script>

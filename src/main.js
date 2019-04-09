@@ -7,13 +7,18 @@ import App from './App.vue'
 // Vue.use(MintUi)
 
 //按需引入,用到什么模块引入什么模块,代码体积小,
-import {Header,Button,Swipe,SwipeItem} from 'mint-ui'
-Vue.component(Header.name,Header);
-// import {Swipe,SwipeItem} from 'mint-ui'
-Vue.component(Swipe.name,Swipe)
-Vue.component(SwipeItem.name,SwipeItem)
-// import {Button} from 'mint-ui'
-Vue.component(Button.name,Button)
+// import {Header,Button,Swipe,SwipeItem,lazyload} from 'mint-ui'
+// Vue.component(Header.name,Header);
+// // import {Swipe,SwipeItem} from 'mint-ui'
+// Vue.component(Swipe.name,Swipe)
+// Vue.component(SwipeItem.name,SwipeItem)
+// // import {Button} from 'mint-ui'
+// Vue.component(Button.name,Button)
+// Vue.use(lazyload)
+
+import MuinUi from 'mint-ui'
+import 'mint-ui/lib/style.css'
+Vue.use(MuinUi)
 
 
 // import {list} from 'mui'
@@ -21,6 +26,10 @@ Vue.component(Button.name,Button)
 
 import './lib/mui/css/mui.css'
 import './lib/mui/css/icons-extra.css'
+
+
+import VuePreview from 'vue-preview'
+Vue.use(VuePreview)
 
 //配置路由
 import VueRouter from 'vue-router'
@@ -30,10 +39,11 @@ import router from './router.js'
 //导入resource模块
 import VueResource from 'vue-resource'
 Vue.use(VueResource)
-Vue.http.options.root='http://192.168.18.57:3005/'
+Vue.http.options.root='http://www.liulongbin.top:3005/'
+Vue.http.options.emulateJSON = true //防火墙
 
 import moment from 'moment'
-Vue.filter('dareFormat',function(dataStr,pattern ='YYYY-MM-DD HH:mm:ss'){
+Vue.filter('dateFormat',function(dataStr,pattern ='YYYY-MM-DD HH:mm:ss'){
     return moment(dataStr).format(pattern)
 })
 

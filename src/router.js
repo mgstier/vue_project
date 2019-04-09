@@ -7,15 +7,22 @@ import ShopcarContainer from './component/ShopcarContainer.vue'
 import newsList from './component/home/newsList.vue'
 import newsinfo from './component/home/Newsinfo.vue'
 
+
+//图片分享想
+import PhotoList from './component/photo/PhotoList.vue'
+import photoinfo from './component/photo/PhotoInfo.vue'
+
 var router = new VueRouter({
-    routes: [
-        {path:'/',redirect:'/home'},
+    routes: [        
         {path:'/home',component:HomeContainer},
         {path:'/member',component:MemberContainer},
         {path:'/search',component:SearchContainer},
         {path:'/shopcar',component:ShopcarContainer},
+        {path:'/',redirect:'/home'},
         {path:'/home/newsList',component:newsList},
-        {path:'/home/newsinfo/:id',component:newsinfo}
+        {path:'/home/newsinfo/:id',component:newsinfo},
+        {path:'/photo/PhotoList',component:PhotoList},
+        {path:'/photo/photoinfo/:id',component:photoinfo}
     ],
     linkActiveClass:'mui-active'
 })
