@@ -1,10 +1,6 @@
 <template>
   <div class="body">
-    <mt-swipe :auto="4000">
-      <mt-swipe-item v-for="(item,id) in list" :key="id">
-        <img :src="item.img">
-      </mt-swipe-item>        
-    </mt-swipe>
+    <swiper :list="list" :isfull='true'></swiper>
 
     <ul class="mui-table-view mui-grid-view mui-grid-9">
 		            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><router-link to="/home/newsList">
@@ -15,9 +11,9 @@
 		                    <img src="../images/menu2.png" alt="">
 		                    <div class="mui-media-body">图片分享</div></router-link>
                 </li>
-		            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
+		            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><router-link to="/goods/goodslist">
 		                    <img src="../images/menu3.png" alt="">
-		                    <div class="mui-media-body">商品购买</div></a>
+		                    <div class="mui-media-body">商品购买</div></router-link>
                 </li>
 		            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
 		                    <img src="../images/menu4.png" alt="">
@@ -38,6 +34,7 @@
 <script>
 //提示信息
 import { Toast } from 'mint-ui';
+import swiper from './subcomponent/swiper.vue'
 
 export default {
   data(){
@@ -59,19 +56,14 @@ export default {
         }
       })
     }
+  },
+  components:{
+    swiper
   }
 };
 </script>
 <style lang="scss" scoped>
-    .mint-swipe{
-        height: 200px;
-      .mint-swipe-item{
-        img{
-          width: 100%;
-          height:100%;
-        }
-      }  
-    }
+    
     .mui-table-view{
       background-color: #fff;
       .mui-table-view-cell{

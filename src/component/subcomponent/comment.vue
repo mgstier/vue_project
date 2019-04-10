@@ -29,7 +29,7 @@ export default {
   },
   methods:{
     getList(){
-      console.log(`api/getcomments/${this.id}?pageindex=${this.pageindex}`)
+      // console.log(`api/getcomments/${this.id}?pageindex=${this.pageindex}`)
       this.$http.get(`api/getcomments/${this.id}?pageindex=${this.pageindex}`).then(result=>{
         console.log(result)
         if(result.body.status == 0){
