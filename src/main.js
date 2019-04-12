@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import App from './App.vue'
 
+import vuex from 'vuex'
+Vue.use(vuex)
 //完整引入,好处是只需引入一次,就可以一直引用,问题是有很多用不到的功能代码会变大;
 // import MintUi from 'mint-ui'
 // import 'mint-ui/lib/style.css'
